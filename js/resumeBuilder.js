@@ -121,19 +121,19 @@ var projects = {
 			"title" : "Portfolio",
 			"dates" : "Feb. 4 - Feb. 20 2016",
 			"desc" : "I built an online portfolio mockup for when I need to present my work to future employers.",
-			"images" : "http://s20.postimg.org/45bn3dknx/website.png",
+			"img" : "http://s20.postimg.org/45bn3dknx/website.png",
 		},
 		{
 			"title" : "Portfolio",
 			"dates" : "Feb. 4 - Feb. 20 2016",
 			"desc" : "I built an online portfolio mockup for when I need to present my work to future employers.",
-			"images" : "http://s20.postimg.org/45bn3dknx/website.png",
+			"img" : "http://s20.postimg.org/45bn3dknx/website.png",
 		},
 		]
 }
 
 //project append
-projects.display = function() {
+
     for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
         var title = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -142,15 +142,9 @@ projects.display = function() {
         $(".project-entry:last").append(dates);
         var desc = HTMLprojectDescription.replace("%data%", projects.projects[project].desc);
         $(".project-entry:last").append(desc);
-
-        if (projects.projects[project].images.length > 0) {
-            for (images in projects.projects[project].images) {
-                var formattedImages = HTMLprojectImage.replace("%data%", projects.projects[project].images[images]);
-                $(".project-entry:last").append(formattedImages);
-            }
-        }
-    }
-}
+        var img = HTMLprojectImage.replace("%data%", projects.projects[project].img);
+        $(".project-entry:last").append(img);
+		};   
 
 
 
