@@ -1,4 +1,4 @@
-
+$(document).ready();
 //header
 
 var name = "Jonathan Lancaster";
@@ -21,7 +21,7 @@ var bio = {
 		"email" : "jcast90@me.com",
 		"github" : "jcast90",
 		"blog" : "bla bla",
-		"location" : "San Diego, CA"
+		"location" : "San Diego, CA",
 	},
 	"welcomeMsg" : "Welcome to my resume, hope you enjoy it and end up hiring me!",
 	"skills" : [
@@ -45,7 +45,8 @@ var github = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#topContacts").append(github);
 var blog = HTMLblog.replace("%data%",bio.contacts.blog);
 $("#topContacts").append(blog);
-
+var city = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(location);
 
 var welcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
 $("#header").append(welcomeMsg);
@@ -71,14 +72,14 @@ var work = {
 		"title" : "cook",
 		"employer" : "Hilton",
 		"dates" : 2016,
-		"city" : "San Diego, CA",
+		"location" : "San Diego, CA",
 		"desc" : "Work as a line cook.",
 			},
 	{
 		"title" : "cook",
 		"employer" : "Embassy Suites",
 		"dates" : 2015,
-		"city" : "Tuscaloosa, AL",
+		"location" : "Tuscaloosa, AL",
 		"desc" : "Work as a Chef de Partie.",
 
 	},
@@ -86,7 +87,7 @@ var work = {
 		"title" : "cook",
 		"employer" : "Kozys",
 		"dates" : 2014,
-		"city" : "Tuscaloosa, AL",
+		"location" : "Tuscaloosa, AL",
 		"desc" : "Work as a Sous Chef.",
 	},
 	]
@@ -100,7 +101,7 @@ function displayWork() {
 	var title = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 	var employer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var dates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-	var city = HTMLworkLocation.replace("%data%", work.jobs[job].city);
+	var city = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 	var desc = HTMLworkDescription.replace("%data%", work.jobs[job].desc)
 	var employerTitle = employer + title + dates + city + desc;
 
@@ -160,7 +161,7 @@ var education = {
 			"name" : "John Brown University",
 			"degree" : "Bachelors",
 			"dates" : "2009 - 2011",
-			"city" : "Siloam Springs, AR",
+			"location" : "Siloam Springs, AR",
 			"major" : ["Graphic Design"],
 			
 		},
@@ -169,7 +170,7 @@ var education = {
 		 	"name" : "Shelton State Community College",
 		 	"degree" : "Associates",
 		 	"dates" : "2011-2014",
-		 	"city" : "Tuscaloosa, AL",
+		 	"location" : "Tuscaloosa, AL",
 		 	"major" : "Culinary Arts",
 		}],
 
@@ -188,7 +189,7 @@ for (var school in education.schools) {
  var name =  HTMLschoolName.replace("%data%",education.schools[school].name);
  var degree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
  var dates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
- var city = HTMLschoolLocation.replace("%data%",education.schools[school].city);
+ var city = HTMLschoolLocation.replace("%data%",education.schools[school].location);
  var major = HTMLschoolMajor.replace("%data%",education.schools[school].major);
 $(".education-entry:last").append(name + degree + dates + city + major);
 }
