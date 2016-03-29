@@ -1,4 +1,4 @@
-$(document).ready();
+$(document).ready(function(){
 //header
 
 var name = "Jonathan Lancaster";
@@ -209,7 +209,7 @@ $("#mapDiv").append(googleMap);
 	
 	
 
-
-
+}
+);
 
 
