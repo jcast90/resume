@@ -146,6 +146,8 @@ var projects = {
         $(".project-entry:last").append(img);
 		};   
 
+	
+
 
 
 
@@ -201,12 +203,12 @@ $("#education").append(HTMLschoolStart);
  $(".education-entry:last").append(title, school, dates, url);
 }
 
+$("#mapDiv").append(googleMap);
 
-	$(document).click(function(loc){
-	var x = loc.pageX;
-	var y = loc.pageY;
+	
+	
 
-	logClicks(x,y);
-});
+
+
 
 
