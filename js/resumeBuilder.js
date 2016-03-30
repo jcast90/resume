@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 //header
 
 var name = "Jonathan Lancaster";
@@ -21,8 +21,8 @@ var bio = {
 		"email" : "jcast90@me.com",
 		"github" : "jcast90",
 		"blog" : "bla bla",
-		"location" : "San Diego, CA",
-	},
+		"location" : ["San Diego, CA","Montevideo, Uruguay"]
+			},
 	"welcomeMsg" : "Welcome to my resume, hope you enjoy it and end up hiring me!",
 	"skills" : [
 		" design" , " coding" , " cooking" , " fun"
@@ -209,7 +209,6 @@ $("#mapDiv").append(googleMap);
 	
 	
 
-}
-);
+
 
 
