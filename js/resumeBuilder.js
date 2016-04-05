@@ -11,9 +11,13 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
 //bio info
+
+
+
 var bio = {
 	"name" : "Jonathan Lancaster",
 	"role" : "Unicorn",
+	"location" : "Montevideo, Uruguay",
 	
 	"contacts" : {
 
@@ -21,11 +25,12 @@ var bio = {
 		"email" : "jcast90@me.com",
 		"github" : "jcast90",
 		"blog" : "bla bla",
-		"location" : ["San Diego, CA","Montevideo, Uruguay"]
+		"location" : "San Diego, CA",
+
 			},
 	"welcomeMsg" : "Welcome to my resume, hope you enjoy it and end up hiring me!",
 	"skills" : [
-		" design" , " coding" , " cooking" , " fun"
+		" Design" , " HTML" , " CSS" , " JavaScript"
 	],
 	"bioPic" : "http://s20.postimg.org/ex8z8s9nh/10458861_10152615248584783_7477915124778507396_n.jpg"
 };
@@ -38,16 +43,16 @@ var bio = {
 var bioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").append(bioPic);
 var mobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(mobile);
-var email = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(email);
-var github = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(github);
-var blog = HTMLblog.replace("%data%",bio.contacts.blog);
-$("#topContacts").append(blog);
-var city = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(location);
+$("#topContacts, #footerContacts").append(mobile);
 
+var email = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts, #footerContacts").append(email);
+var github = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#topContacts, #footerContacts").append(github);
+var blog = HTMLblog.replace("%data%",bio.contacts.blog);
+$("#topContacts, #footerContacts").append(blog);
+var city = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts, #footerContacts").append(city);
 var welcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
 $("#header").append(welcomeMsg);
 
@@ -116,7 +121,9 @@ displayWork();
 
 
 //project info
-var projects = {
+
+ var projects = {
+
 	"projects" : [
 		{		
 			"title" : "Portfolio",
@@ -125,13 +132,13 @@ var projects = {
 			"img" : "http://s20.postimg.org/45bn3dknx/website.png",
 		},
 		{
-			"title" : "Portfolio",
+			"title" : "Online Resume",
 			"dates" : "Feb. 4 - Feb. 20 2016",
-			"desc" : "I built an online portfolio mockup for when I need to present my work to future employers.",
-			"img" : "http://s20.postimg.org/45bn3dknx/website.png",
+			"desc" : "I built an online resume for when I need to present my accomplishments to future employers.",
+			"img" : "https://unsplash.it/1260/500",
 		},
 		]
-}
+};
 
 //project append
 
@@ -146,6 +153,8 @@ var projects = {
         var img = HTMLprojectImage.replace("%data%", projects.projects[project].img);
         $(".project-entry:last").append(img);
 		};   
+	   
+
 
 	
 
@@ -206,7 +215,7 @@ $("#education").append(HTMLschoolStart);
 
 $("#mapDiv").append(googleMap);
 
-	
+
 	
 
 
