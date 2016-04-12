@@ -100,7 +100,7 @@ function displayWork() {
         var employer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
         var dates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
         var city = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-        var desc = HTMLworkDescription.replace("%data%", work.jobs[job].desc)
+        var desc = HTMLworkDescription.replace("%data%", work.jobs[job].desc);
         var employerTitle = employer + title + dates + city + desc;
 
         $(".work-entry:last").append(employerTitle);
@@ -126,7 +126,7 @@ var projects = {
 
 
     ],
-}
+};
 
 
 //project append
@@ -151,7 +151,7 @@ projects.display = function() {
 
         }
     }
-}
+};
 projects.display();
 
 
