@@ -24,7 +24,7 @@ var bio = {
 		"mobile" : "870-761-1772",
 		"email" : "jcast90@me.com",
 		"github" : "jcast90",
-		"blog" : "bla bla",
+		
 		"location" : "San Diego, CA",
 
 			},
@@ -49,8 +49,7 @@ var email = HTMLemail.replace("%data%", bio.contacts.email);
 $("#topContacts, #footerContacts").append(email);
 var github = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#topContacts, #footerContacts").append(github);
-var blog = HTMLblog.replace("%data%",bio.contacts.blog);
-$("#topContacts, #footerContacts").append(blog);
+
 var city = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts, #footerContacts").append(city);
 var welcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
@@ -68,8 +67,8 @@ if(bio.skills.length > 0) {
 	$("#skills").append(formattedSkill);
 	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 	$("#skills").append(formattedSkill);
-}
-
+	}
+  
 //work info
 var work = {
 	"jobs" : [
@@ -124,36 +123,43 @@ displayWork();
 
  var projects = {
 
-	"projects" : [
-		{		
+	"recentProjects" : [
+	{		
 			"title" : "Portfolio",
 			"dates" : "Feb. 4 - Feb. 20 2016",
 			"desc" : "I built an online portfolio mockup for when I need to present my work to future employers.",
-			"img" : "http://s20.postimg.org/45bn3dknx/website.png",
+			"img" : ["http://s20.postimg.org/45bn3dknx/website.png"],
 		},
-		{
-			"title" : "Online Resume",
-			"dates" : "Feb. 4 - Feb. 20 2016",
-			"desc" : "I built an online resume for when I need to present my accomplishments to future employers.",
-			"img" : "https://unsplash.it/1260/500",
-		},
-		]
-};
+
+
+		],
+	}
+		
 
 //project append
+projects.display = function() {
 
-    for (project in projects.projects) {
+    for (i in projects.recentProjects)
+    	var project = projects.recentProjects[i];
+
         $("#projects").append(HTMLprojectStart);
-        var title = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+
+        var title = HTMLprojectTitle.replace("%data%", project.title);
         $(".project-entry:last").append(title);
-        var dates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        var dates = HTMLprojectDates.replace("%data%", project.dates);
         $(".project-entry:last").append(dates);
-        var desc = HTMLprojectDescription.replace("%data%", projects.projects[project].desc);
+        var desc = HTMLprojectDescription.replace("%data%", project.desc);
         $(".project-entry:last").append(desc);
-        var img = HTMLprojectImage.replace("%data%", projects.projects[project].img);
-        $(".project-entry:last").append(img);
-		};   
-	   
+
+    if (project.img.length > 0){
+    	for (j in project.img) {
+        var image = HTMLprojectImage.replace("%data%", project.img[j]);
+        $(".project-entry:last").append(image);
+        	
+    	}
+	}  
+}
+	   projects.display();
 
 
 	
