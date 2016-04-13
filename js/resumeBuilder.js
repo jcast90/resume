@@ -158,7 +158,7 @@ var education = {
             "dates": "2009 - 2011",
             "location": "Siloam Springs, AR",
             "majors": ["Graphic Design"],
-            "url": "http://www.jbu.edu"
+            /*"url": "http://www.jbu.edu" I didn't see a spot for the URL in helper.js? */
 
         },
 
@@ -168,7 +168,7 @@ var education = {
             "dates": "2011-2014",
             "location": "Tuscaloosa, AL",
             "majors": "Culinary Arts",
-            "url": "http://www.sheltonstate.edu"
+           /* "url": "http://www.sheltonstate.edu" */
         }
     ],
 
@@ -189,8 +189,8 @@ for (var school in education.schools) {
     var dates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
     var city = HTMLschoolLocation.replace("%data%", education.schools[school].location);
     var majors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-    var url = HTMLschoolUrl.replace("%data%", education.schools[school].url)
-    $(".education-entry:last").append(name + degree + dates + city + majors + url);
+   /* var url = HTMLschoolUrl.replace("%data%", education.schools[school].url) */
+    $(".education-entry:last").append(name + degree + dates + city + majors /* + url */);
 }
 
 $("#education").append(HTMLonlineClasses);
