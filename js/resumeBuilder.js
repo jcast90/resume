@@ -87,7 +87,7 @@ var work = {
 //work append
 work.display = function(){
 
-    for (job in work.jobs) 
+    for (job in work.jobs) { 
         $("#workExperience").append(HTMLworkStart);
         var title = HTMLworkTitle.replace("%data%", work.jobs[job].title);
         var employer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -97,7 +97,7 @@ work.display = function(){
         var employerTitle = employer + title + dates + city + description;
 
         $(".work-entry:last").append(employerTitle);
-   
+   }
 }
 
 work.display();
@@ -137,10 +137,10 @@ projects.display = function() {
     $(".project-entry:last").append(description);
 
     if (project.images.length > 0) {
-        for (j in project.images) {
-            var images = HTMLprojectImage.replace("%data%", project.images[j]);
+        project.images.forEach(function(image){
+            var images = HTMLprojectImage.replace("%data%", project.images[image]);
             $(".project-entry:last").append(images);
-			}
+			});
         }
     }
 };
