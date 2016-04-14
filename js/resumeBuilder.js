@@ -23,9 +23,8 @@ var bio = {
 
 //bio append
 
-bio.display = function(){
+bio.display = function() {
 	
-
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 var formattedName =  HTMLheaderName.replace("%data%", bio.name);
@@ -57,6 +56,7 @@ if (bio.skills.length > 0) {
     $("#skills").append(formattedSkill);
 	}
 };
+
 bio.display();
 
 //work info
@@ -98,7 +98,7 @@ work.display = function(){
         $(".work-entry:last").append(employerTitle);
 
 
-    }
+   
 }
 
 work.display();
@@ -144,6 +144,7 @@ projects.display = function() {
         }
     }
 };
+
 projects.display();
 
 
