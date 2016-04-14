@@ -160,8 +160,7 @@ var education = {
             "dates": "2009 - 2011",
             "location": "Siloam Springs, AR",
             "majors": ["Graphic Design"],
-            /*"url": "http://www.jbu.edu" I didn't see a spot for the URL in helper.js? */
-
+           // "url": "http://www.jbu.edu" 
         },
 
         {
@@ -170,7 +169,7 @@ var education = {
             "dates": "2011-2014",
             "location": "Tuscaloosa, AL",
             "majors": "Culinary Arts",
-            /* "url": "http://www.sheltonstate.edu" */
+           //	"url": "http://www.sheltonstate.edu" 
         }
     ],
 
@@ -182,7 +181,7 @@ var education = {
         "url": "https://www.udacity.com",
     }],
 };
-
+// Couldn't find a spot for the URL's .  Not sure what you were talking about?
 //education append
 education.display = function() {
     $("#education").append(HTMLschoolStart);
@@ -192,7 +191,7 @@ education.display = function() {
         var dates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var city = HTMLschoolLocation.replace("%data%", education.schools[school].location);
         var majors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-        /* var url = HTMLschoolUrl.replace("%data%", education.schools[school].url) */
+       // var url = HTMLschoolUrl.replace("%data%", education.schools[school].url) 
         $(".education-entry:last").append(name + degree + dates + city + majors /* + url */ );
     }
 
