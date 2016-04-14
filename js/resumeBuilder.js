@@ -10,7 +10,6 @@ var bio = {
         "mobile": "870-761-1772",
         "email": "jcast90@me.com",
         "github": "jcast90",
-
         "location": "San Diego, CA",
 
     },
@@ -59,6 +58,64 @@ bio.display = function() {
 
 bio.display();
 
+//education info
+var education = {
+
+
+    "schools": [{
+            "name": "John Brown University",
+            "degree": "Bachelors",
+            "dates": "2009 - 2011",
+            "location": "Siloam Springs, AR",
+            "majors": ["Graphic Design"],
+            "url": "http://www.jbu.edu"
+        },
+
+        {
+            "name": "Shelton State Community College",
+            "degree": "Associates",
+            "dates": "2011-2014",
+            "location": "Tuscaloosa, AL",
+            "majors": ["Culinary Arts"],
+            "url": "http://www.sheltonstate.edu"
+        }
+    ],
+
+
+    "online": [{
+        "school": "Udacity",
+        "title": "NanoDegree Front End Web Developer",
+        "date": "Feb. 4 2016 - present",
+        "url": "https://www.udacity.com",
+    }],
+};
+
+//education append
+education.display = function() {
+    $("#education").append(HTMLschoolStart);
+    for (var school in education.schools) {
+        var name = HTMLschoolName.replace("%data%", education.schools[school].name);
+        var degree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        var dates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+        var city = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        var majors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+        var url = HTMLschoolUrl.replace("%data%", education.schools[school].url);
+        $(".education-entry:last").append(name + degree + dates + city + majors + url);
+    }
+
+    $("#education").append(HTMLonlineClasses);
+    for (var online in education.online) {
+        $("#education").append(HTMLschoolStart);
+        var title = HTMLonlineTitle.replace("%data%", education.online[online].title);
+        var school = HTMLonlineSchool.replace("%data%", education.online[online].school);
+        var date = HTMLonlineDates.replace("%data%", education.online[online].date);
+        var url = HTMLonlineURL.replace("%data%", education.online[online].url);
+        $(".education-entry:last").append(title, school, date, url);
+    }
+};
+
+education.display();
+
 //work info
 var work = {
     "jobs": [{
@@ -83,6 +140,8 @@ var work = {
     }]
 
 };
+
+
 
 //work append
 work.display = function() {
@@ -147,64 +206,4 @@ projects.display = function() {
 
 projects.display();
 
-
-// Couldn't find a spot for the URL's .  Not sure what you were talking about? 
-
-//education info
-var education = {
-
-
-    "schools": [{
-            "name": "John Brown University",
-            "degree": "Bachelors",
-            "dates": "2009 - 2011",
-            "location": "Siloam Springs, AR",
-            "majors": ["Graphic Design"],
-            // "url": "http://www.jbu.edu"   ?
-        },
-
-        {
-            "name": "Shelton State Community College",
-            "degree": "Associates",
-            "dates": "2011-2014",
-            "location": "Tuscaloosa, AL",
-            "majors": "Culinary Arts",
-            //"url": "http://www.sheltonstate.edu"    ?
-        }
-    ],
-
-
-    "online": [{
-        "school": "Udacity",
-        "title": "NanoDegree Front End Web Developer",
-        "date": "Feb. 4 2016 - present",
-        "url": "https://www.udacity.com",
-    }],
-};
-
-//education append
-education.display = function() {
-    $("#education").append(HTMLschoolStart);
-    for (var school in education.schools) {
-        var name = HTMLschoolName.replace("%data%", education.schools[school].name);
-        var degree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-        var dates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        var city = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-        var majors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-        // var url = HTMLschoolUrl.replace("%data%", education.schools[school].url)        ?
-        $(".education-entry:last").append(name + degree + dates + city + majors /* + url  ? */ );
-    }
-
-    $("#education").append(HTMLonlineClasses);
-    for (var online in education.online) {
-        $("#education").append(HTMLschoolStart);
-        var title = HTMLonlineTitle.replace("%data%", education.online[online].title);
-        var school = HTMLonlineSchool.replace("%data%", education.online[online].school);
-        var date = HTMLonlineDates.replace("%data%", education.online[online].date);
-        var url = HTMLonlineURL.replace("%data%", education.online[online].url);
-        $(".education-entry:last").append(title, school, date, url);
-    }
-};
-
-education.display();
 $("#mapDiv").append(googleMap);
