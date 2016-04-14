@@ -86,6 +86,7 @@ var work = {
 
 //work append
 work.display = function(){
+
     for (job in work.jobs) 
         $("#workExperience").append(HTMLworkStart);
         var title = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -96,8 +97,6 @@ work.display = function(){
         var employerTitle = employer + title + dates + city + description;
 
         $(".work-entry:last").append(employerTitle);
-
-
    
 }
 
@@ -124,8 +123,9 @@ var projects = {
 //project append
 projects.display = function() {
 
-    for (i in projects.projects)
+    for (i in projects.projects){
         var project = projects.projects[i];
+   
 
     $("#projects").append(HTMLprojectStart);
 
@@ -136,11 +136,11 @@ projects.display = function() {
     var description = HTMLprojectDescription.replace("%data%", project.description);
     $(".project-entry:last").append(description);
 
-    if (project.img.length > 0) {
-        for (j in project.img) {
-            var images = HTMLprojectImage.replace("%data%", project.imgages[j]);
+    if (project.images.length > 0) {
+        for (j in project.images) {
+            var images = HTMLprojectImage.replace("%data%", project.images[j]);
             $(".project-entry:last").append(images);
-
+			}
         }
     }
 };
