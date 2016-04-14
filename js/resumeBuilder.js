@@ -98,7 +98,7 @@ work.display = function() {
 
         $(".work-entry:last").append(employerTitle);
     }
-}
+};
 
 work.display();
 
@@ -202,9 +202,9 @@ education.display = function() {
         var school = HTMLonlineSchool.replace("%data%", education.online[online].school);
         var date = HTMLonlineDates.replace("%data%", education.online[online].date);
         var url = HTMLonlineURL.replace("%data%", education.online[online].url);
-        $(".education-entry:last").append(title, school, dates, url);
+        $(".education-entry:last").append(title, school, date, url);
     }
-}
+};
 
 education.display();
 $("#mapDiv").append(googleMap);
