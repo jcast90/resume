@@ -119,6 +119,7 @@ education.display();
 //work info
 var work = {
     "jobs": [{
+
         "title": "cook",
         "employer": "Hilton",
         "dates": "2016",
@@ -144,21 +145,20 @@ var work = {
 
 
 //work append
+
+
 work.display = function() {
-
-    for (job in work.jobs) {
+    work.jobs.forEach(function(job) {
         $("#workExperience").append(HTMLworkStart);
-        var title = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-        var employer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-        var dates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-        var city = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-        var description = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        var employer = HTMLworkEmployer.replace("%data%", job.employer);
+        var title = HTMLworkTitle.replace("%data%", job.title);
+        var dates = HTMLworkDates.replace("%data%", job.dates);
+        var city = HTMLworkLocation.replace("%data%", job.location);
+        var description = HTMLworkDescription.replace("%data%", job.description);
         var employerTitle = employer + title + dates + city + description;
-
         $(".work-entry:last").append(employerTitle);
-    }
+    });
 };
-
 work.display();
 
 
